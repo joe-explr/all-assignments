@@ -36,7 +36,7 @@ function createDomElements() {
 
       var grandChildElement3 = document.createElement("button");
       grandChildElement3.innerHTML = "Delete";
-      grandChildElement3.setAttribute("onclick", "deleteTodo(" + item.id + ")");
+      grandChildElement3.setAttribute("onclick", "deleteTodo(" + item.id + ",this)");
 
       childElement.appendChild(grandChildElement1);
       childElement.appendChild(grandChildElement2);
@@ -82,5 +82,12 @@ window.setInterval(() => {
 window.setInterval(() => {
     createDomElements();
 }, 1000);
-
+function deleteTodo(id){
+  var parentElement = document.getElementById("mainArea");
+  var currentChildren = Array.from(parentElement.children);
+  var child= currentChildren.find((child)=>{
+    child.id==id
+  })
+  parentElement.removeChild(child)
+}
 
