@@ -1,16 +1,25 @@
-
 import React from "react";
+import { useEffect } from "react";
+import { Link, useNavigate } from 'react-router-dom';
+import useStorage from "./useStorage";
 
-/// This is the landing page. You need to add a link to the login page here.
-/// Maybe also check from the backend if the user is already logged in and then show them a logout button
-/// Logging a user out is as simple as deleting the token from the local storage.
+
 function Landing() {
-    return <div>
+    const [token,setToken]= useStorage("token")
+    let navigate=useNavigate()
+    useEffect(()=>{
+        if(token!='0'){
+            navigate('/courses')
+        }
+    },[token])
+
+    return (
+    <div className="landing">
         <h1>Welcome to course selling website!</h1>
-        <a href="/register">Register</a>
+        <Link to='/register'>Register</Link>
         <br/>
-        <a href="/login">Login</a>
-    </div>
+        <Link to="/login">Login</Link>
+    </div>)
 }
 
 export default Landing;

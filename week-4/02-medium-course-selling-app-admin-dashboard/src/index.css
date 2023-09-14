@@ -1,0 +1,60 @@
+.nav-main{
+    background-color: #121212;
+    display:flex;
+}
+.nav-link{
+    color: aliceblue;
+    text-decoration: none;
+}
+.nav_main-list {
+    display:flex;
+    justify-content: space-evenly;
+    flex: 3;
+}
+.nav_user {
+    display:flex;
+    flex: 1;
+    justify-content: flex-end;
+}
+body{
+    margin:0;
+}
+.content{
+}
+.form_elem{
+    display: flex;
+    flex-direction: column;
+    margin: 1% 0;
+    align-items: flex-start;
+}
+
+.login-card{
+    justify-content: space-between;
+    border: 1px solid lightblue;
+    padding: 2%;
+    display: flex;
+    flex-direction: column;
+    height: 40vh;
+    width:25vw;
+}
+
+.login-bg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:#F5F5F5;
+    height: 96vh;
+    width: 100vw;
+}
+
+.invalid{
+    color:red;
+    font-size: medium;
+}
+
+.landing{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}

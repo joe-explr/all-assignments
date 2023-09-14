@@ -4,21 +4,25 @@ import Landing from "./components/Landing";
 import CreateCourse from './components/CreateCourse';
 import Register from './components/Register';
 import ShowCourses from './components/ShowCourses';
+import NotFound from './components/NotFound';
+import NavBar from './components/NavBar';
+import ShowCourse from './components/ShowCourse';
 
-// This file shows how you can do routing in React.
-// Try going to /login, /register, /about, /courses on the website and see how the html changes
-// based on the route.
-// You can also try going to /random and see what happens (a route that doesnt exist)
 function App() {
     return (
         <Router>
+            <NavBar />
+            <div className={'content'}>
             <Routes>
                 <Route path="/" element={<Landing />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/register" element={<Register />} />
-                <Route path="/about" element={<CreateCourse />} />
+                <Route path="/create" element={<CreateCourse />} />
                 <Route path="/courses" element={<ShowCourses />} />
+                <Route path="/course/:id" element={<ShowCourse />} />
+                <Route path="*" element={<NotFound/>} />
             </Routes>
+            </div>
         </Router>
     );
 }

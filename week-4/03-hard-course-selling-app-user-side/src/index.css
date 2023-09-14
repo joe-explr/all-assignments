@@ -1,0 +1,29 @@
+.nav-main{
+    background-color: #121212;
+    display:flex;
+}
+.nav-link{
+    color: aliceblue;
+    text-decoration: none;
+}
+.nav_main-list {
+    display:flex;
+    flex:1;
+    list-style-type: none;
+}
+.nav_main-list> li {
+    flex:3;
+    color: aliceblue;
+}
+.nav_main-list> li:last-child {
+    flex:1;
+}
+.nav_main-list> li:hover{
+    cursor: pointer;
+}
+body{
+    margin:0;
+}
+.content{
+    margin:0% 3%;
+}
